@@ -24,7 +24,7 @@
 </editorArea>
 <editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/mm/Desktop/Nueva carpeta/main.c" title="main.c" tooltip="C:/Users/mm/Desktop/Nueva carpeta/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Diplomatura/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="104" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="153" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="bsp.c" partName="bsp.c" path="C:/Users/mm/Desktop/Nueva carpeta/bsp/bsp.c" title="bsp.c" tooltip="C:/Users/mm/Desktop/Nueva carpeta/bsp/bsp.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Diplomatura/bsp/bsp.c"/>
@@ -106,17 +106,17 @@
 </fastViewBar>
 <fastViewBar fastViewLocation="1024" id="org.eclipse.ui.internal.ViewStack@2f3536" orientation="256" selectedTabId="org.eclipse.ui.console.ConsoleView" style="1">
 <fastViews>
-<view id="org.eclipse.ui.console.ConsoleView" ratio="0.21968617"/>
+<view id="org.eclipse.ui.console.ConsoleView" ratio="0.6194825"/>
+</fastViews>
+</fastViewBar>
+<fastViewBar fastViewLocation="131072" id="org.eclipse.ui.internal.ViewStack@10b17ef" orientation="512" selectedTabId="org.coocox.component.ui.Help" style="1">
+<fastViews>
+<view id="org.coocox.component.ui.Help" ratio="0.29916897"/>
 </fastViews>
 </fastViewBar>
 <fastViewBar fastViewLocation="16384" id="org.eclipse.ui.internal.ViewStack@643901" orientation="256" selectedTabId="org.coocox.component.ui.ComponentView" style="1">
 <fastViews>
 <view id="org.coocox.component.ui.ComponentView" ratio="0.3"/>
-</fastViews>
-</fastViewBar>
-<fastViewBar fastViewLocation="131072" id="org.eclipse.ui.internal.ViewStack@10b17ef" orientation="512" selectedTabId="org.coocox.component.ui.Help" style="1">
-<fastViews>
-<view id="org.coocox.component.ui.Help" ratio="0.3"/>
 </fastViews>
 </fastViewBar>
 </fastViewBars>
@@ -271,10 +271,6 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F4_Ethernet/cmsis_lib/include/stm32f4xx_usart.h"/>
-<editor factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.builder.ui.editors.ConfigEditor">
-<org.coocox.builder.ui.editors.ConfigEditor/>
-</editor>
 <editor factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage">
 <org.coocox.welcome.ui.WelcomePage/>
 </editor>
@@ -289,150 +285,153 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Diplomatura/bsp/bsp.h"/>
 <editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" uri="file:/C:/Users/mm/Desktop/Nueva%20carpeta/bsp/bsp.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Diplomatura/cmsis_boot/stm32f4xx.h"/>
+<editor factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory" id="org.coocox.builder.ui.editors.repository.RepositoryBrowser">
+<subPage/>
+</editor>
 </editors>
-<item historyLabel="stm32f4xx_usart.h" index="0">
-<position info="not_deleted" x="16257" y="0"/>
-</item>
-<item historyLabel="Configuration" index="1"/>
-<item historyLabel="welcome" index="2"/>
-<item historyLabel="Repository" index="3"/>
-<item historyLabel="main.c" index="4">
+<item historyLabel="welcome" index="0"/>
+<item historyLabel="Repository" index="1"/>
+<item historyLabel="main.c" index="2">
 <position info="not_deleted" x="54" y="0"/>
 </item>
-<item historyLabel="main.c" index="4">
+<item historyLabel="main.c" index="2">
 <position info="not_deleted" x="914" y="0"/>
 </item>
-<item historyLabel="main.c" index="4">
+<item historyLabel="main.c" index="2">
 <position info="not_deleted" x="1087" y="0"/>
 </item>
-<item historyLabel="main.c" index="4">
+<item historyLabel="main.c" index="2">
 <position info="not_deleted" x="2043" y="29"/>
 </item>
-<item historyLabel="main.c" index="4">
+<item historyLabel="main.c" index="2">
 <position info="not_deleted" x="974" y="0"/>
 </item>
-<item historyLabel="main.c" index="4">
+<item historyLabel="main.c" index="2">
 <position info="not_deleted" x="816" y="0"/>
 </item>
-<item historyLabel="main.c" index="4">
+<item historyLabel="main.c" index="2">
 <position info="not_deleted" x="1089" y="0"/>
 </item>
-<item historyLabel="main.c" index="4">
+<item historyLabel="main.c" index="2">
 <position info="not_deleted" x="38" y="0"/>
+</item>
+<item historyLabel="bsp.h" index="3">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="bsp.h" index="4">
+<position info="not_deleted" x="147" y="0"/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="35" y="0"/>
+</item>
+<item historyLabel="bsp.h" index="5">
+<position/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="35" y="0"/>
+</item>
+<item historyLabel="bsp.c" index="6">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="bsp.h" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="bsp.c" index="6">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="bsp.h" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="37" y="0"/>
 </item>
 <item historyLabel="bsp.h" index="5">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="bsp.h" index="6">
-<position info="not_deleted" x="147" y="0"/>
-</item>
-<item historyLabel="main.c" index="4">
-<position info="not_deleted" x="35" y="0"/>
-</item>
-<item historyLabel="bsp.h" index="7">
+<item historyLabel="bsp.c" index="6">
 <position/>
 </item>
-<item historyLabel="main.c" index="4">
-<position info="not_deleted" x="35" y="0"/>
-</item>
-<item historyLabel="bsp.c" index="8">
+<item historyLabel="bsp.h" index="5">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="bsp.h" index="9">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="bsp.c" index="6">
+<position/>
 </item>
-<item historyLabel="bsp.c" index="8">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="bsp.h" index="9">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="main.c" index="4">
+<item historyLabel="main.c" index="2">
 <position info="not_deleted" x="37" y="0"/>
 </item>
-<item historyLabel="bsp.h" index="7">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="bsp.c" index="8">
+<item historyLabel="bsp.c" index="6">
 <position/>
 </item>
-<item historyLabel="bsp.h" index="7">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="bsp.c" index="8">
+<item historyLabel="main.c" index="2">
 <position/>
 </item>
-<item historyLabel="main.c" index="4">
-<position info="not_deleted" x="37" y="0"/>
-</item>
-<item historyLabel="bsp.c" index="8">
+<item historyLabel="bsp.c" index="6">
 <position/>
 </item>
-<item historyLabel="main.c" index="4">
+<item historyLabel="main.c" index="2">
 <position/>
 </item>
-<item historyLabel="bsp.c" index="8">
+<item historyLabel="bsp.c" index="6">
 <position/>
 </item>
-<item historyLabel="main.c" index="4">
+<item historyLabel="main.c" index="2">
 <position/>
 </item>
-<item historyLabel="bsp.c" index="8">
-<position/>
-</item>
-<item historyLabel="main.c" index="4">
-<position/>
-</item>
-<item historyLabel="main.c" index="4">
+<item historyLabel="main.c" index="2">
 <position info="not_deleted" x="34" y="0"/>
 </item>
-<item historyLabel="bsp.h" index="9">
+<item historyLabel="bsp.h" index="7">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="bsp.h" index="9">
+<item historyLabel="bsp.h" index="7">
 <position info="not_deleted" x="115" y="0"/>
 </item>
-<item historyLabel="bsp.c" index="8">
+<item historyLabel="bsp.c" index="6">
 <position/>
 </item>
-<item historyLabel="main.c" index="4">
+<item historyLabel="main.c" index="2">
 <position info="not_deleted" x="258" y="0"/>
 </item>
-<item historyLabel="bsp.c" index="10">
+<item historyLabel="bsp.c" index="8">
 <position/>
 </item>
-<item historyLabel="bsp.h" index="9">
-<position info="not_deleted" x="145" y="0"/>
-</item>
-<item historyLabel="bsp.c" index="10">
-<position/>
-</item>
-<item historyLabel="bsp.h" index="9">
+<item historyLabel="bsp.h" index="7">
 <position info="not_deleted" x="145" y="0"/>
 </item>
 <item historyLabel="bsp.c" index="8">
+<position/>
+</item>
+<item historyLabel="bsp.h" index="7">
+<position info="not_deleted" x="145" y="0"/>
+</item>
+<item historyLabel="bsp.c" index="6">
 <position info="not_deleted" x="433" y="0"/>
 </item>
-<item historyLabel="bsp.c" index="10">
-<position/>
-</item>
 <item historyLabel="bsp.c" index="8">
 <position/>
 </item>
-<item historyLabel="stm32f4xx.h" index="11">
+<item historyLabel="bsp.c" index="6">
+<position/>
+</item>
+<item historyLabel="stm32f4xx.h" index="9">
 <position info="not_deleted" x="70166" y="0"/>
 </item>
-<item historyLabel="bsp.c" index="8">
+<item historyLabel="bsp.c" index="6">
 <position/>
 </item>
-<item historyLabel="bsp.c" index="10">
+<item historyLabel="bsp.c" index="8">
 <position info="not_deleted" x="443" y="58"/>
 </item>
-<item historyLabel="bsp.c" index="8">
+<item historyLabel="bsp.c" index="6">
 <position info="not_deleted" x="1004" y="0"/>
 </item>
-<item active="true" historyLabel="main.c" index="4">
+<item historyLabel="main.c" index="2">
 <position info="not_deleted" x="258" y="0"/>
+</item>
+<item historyLabel="Repository" index="10"/>
+<item active="true" historyLabel="main.c" index="2">
+<position info="not_deleted" x="405" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -441,6 +440,11 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
+<file factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory" id="org.coocox.builder.ui.editors.repository.RepositoryBrowser" name="Repository" tooltip="Repository">
+<persistable>
+<subPage/>
+</persistable>
+</file>
 <file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="bsp.c" tooltip="C:\Users\mm\Desktop\Nueva carpeta\bsp\bsp.c">
 <persistable uri="file:/C:/Users/mm/Desktop/Nueva%20carpeta/bsp/bsp.c"/>
 </file>
@@ -458,18 +462,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="bsp.h" tooltip="Diplomatura/bsp.h">
 <persistable path="/Diplomatura/bsp.h"/>
-</file>
-<file factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory" id="org.coocox.builder.ui.editors.repository.RepositoryBrowser" name="Repository" tooltip="Repository">
-<persistable>&#x0A;<subPage/>
-</persistable>
-</file>
-<file factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory" id="org.coocox.builder.ui.editors.repository.RepositoryBrowser" name="Repository" tooltip="Repository">
-<persistable>&#x0A;<subPage/>
-</persistable>
-</file>
-<file factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory" id="org.coocox.builder.ui.editors.repository.RepositoryBrowser" name="Repository" tooltip="Repository">
-<persistable>&#x0A;<subPage/>
-</persistable>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_dma.h" tooltip="Demo_36/cmsis_lib/include/stm32f4xx_dma.h">
 <persistable path="/Demo_36/cmsis_lib/include/stm32f4xx_dma.h"/>
