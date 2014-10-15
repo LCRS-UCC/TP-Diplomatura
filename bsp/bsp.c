@@ -45,9 +45,9 @@ uint8_t sw_getState() {
 	return GPIO_ReadInputDataBit(GPIOA, BOTON);
 }
 
-void led_setBright(uint8_t led, uint8_t value) {
+void led_setBright(uint8_t led, float value) {
 
-	*leds_pwm[led] = 10000 * value / 100;
+	*leds_pwm[led] = 10000.0 * value / 100.0;
 }
 
 void bsp_delayMs(uint16_t x) {

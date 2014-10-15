@@ -40,7 +40,7 @@ void bsp_delayMs(uint16_t x);
 /**
  * @brief Configura la intencidad del led.
  */
-void led_setBright(uint8_t led, uint8_t value);
+void led_setBright(uint8_t led, float value);
 
 /**
  * @brief Devuelve valor de acc del sensor.
