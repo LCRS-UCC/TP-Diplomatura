@@ -13,31 +13,22 @@ void pulsoLed(uint8_t led, uint32_t tiempo);
  * @brief Aplicacion principal
  */
 int main(void) {
-	float acc;
-
+	float val;
+	uint8_t i;
 	// Inicializo hardware
 	bsp_init();
 
 	while (1) {
-		// X
-		acc = bsp_get_acc('x') * 20.0;
-		if (acc >= 0) {
-			led_setBright(2, (int) acc);
-			led_setBright(3, 0);
-		} else {
-			acc*= -1;
-			led_setBright(3, (int) acc);
-			led_setBright(2, 0);
-		}
-		// Y
-		acc = bsp_get_acc('y') * 20.0;
-		if (acc >= 0) {
-			led_setBright(0, (int) acc);
-			led_setBright(1, 0);
-		} else {
-			acc*= -1;
-			led_setBright(1, (int) acc);
-			led_setBright(0, 0);
+		// Leo el valor del ADC
+		val = adc_get();
+
+		// Recorro los 8 leds y prendo/apago los que correspondan
+		for (i = 0; i < 8; i++) {
+			if (val > (i * 100) / 8) {
+				led_off(i + 4);
+			} else {
+				led_on(i + 4);
+			}
 		}
 	}
 }

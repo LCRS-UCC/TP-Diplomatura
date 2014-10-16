@@ -47,5 +47,9 @@ void led_setBright(uint8_t led, float value);
  */
 float bsp_get_acc(char eje);
 
+/**
+ * @brief Devuelve valor del ADC en porcentaje
+ */
+float adc_get();
 
 #endif

@@ -7,6 +7,7 @@
 #include "cmsis_lib/include/stm32f4xx_exti.h"		// Controlador interrupciones externas
 #include "cmsis_lib/include/stm32f4xx_syscfg.h"	    // configuraciones Generales
 #include "cmsis_lib/include/misc.h"				    // Vectores de interrupciones (NVIC)
+#include "cmsis_lib/include/stm32f4xx_adc.h"				    // Vectores de interrupciones (NVIC)
 #include "LIS3DSH.h"
 #include "bsp/bsp.h"
 
@@ -17,9 +18,12 @@
 #define BOTON GPIO_Pin_0
 
 /* Puertos de los leds disponibles */
-GPIO_TypeDef* leds_port[] = { GPIOD, GPIOD, GPIOD, GPIOD };
+GPIO_TypeDef* leds_port[] = { GPIOD, GPIOD, GPIOD, GPIOD, GPIOD, GPIOD, GPIOD,
+		GPIOD, GPIOD, GPIOD, GPIOD, GPIOD };
 /* Leds disponibles */
-uint16_t const leds[] = { LED_V, LED_R, LED_N, LED_A };
+uint16_t const leds[] =
+		{ LED_V, LED_R, LED_N, LED_A, GPIO_Pin_0, GPIO_Pin_1, GPIO_Pin_2,
+				GPIO_Pin_3, GPIO_Pin_6, GPIO_Pin_7, GPIO_Pin_10, GPIO_Pin_11 };
 
 volatile uint32_t* const leds_pwm[] = { &TIM4->CCR1, &TIM4->CCR3, &TIM4->CCR2,
 		&TIM4->CCR4 };
@@ -87,22 +91,6 @@ void TIM2_IRQHandler(void) {
 	}
 }
 
-void bsp_led_init();
-void bsp_sw_init();
-void bsp_timer_config();
-void bsp_pwm_config(void) ;
-
-void bsp_init() {
-	//bsp_led_init();
-
-	bsp_pwm_config();
-	bsp_sw_init();
-	bsp_timer_config();
-	LIS3DSH_Init();
-	LIS3DSH_Set_Output(0x47);
-
-}
-
 /**
  * @brief Lee el valor de acceleracion
  */
@@ -125,6 +113,37 @@ float bsp_get_acc(char eje) {
 	}
 }
 
+float adc_get(void) {
+	// Selecciono el canal a convertir
+	ADC_RegularChannelConfig(ADC1, 12, 1, ADC_SampleTime_15Cycles);
+	ADC_SoftwareStartConv(ADC1);
+
+	// Espero a que la conversión termine
+	while (ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC) != SET)
+		;
+
+	// Devuelvo la Medicion
+	return ADC_GetConversionValue(ADC1) / 40.96;
+}
+
+// Prototipos de inicializaciones.
+void bsp_led_init();
+void bsp_sw_init();
+void bsp_timer_init();
+void bsp_pwm_init(void);
+void bsp_adc_init(void);
+
+void bsp_init() {
+	bsp_led_init();
+
+	//bsp_pwm_init();
+	bsp_sw_init();
+	bsp_timer_init();
+	//LIS3DSH_Init();
+	//LIS3DSH_Set_Output(0x47);
+	bsp_adc_init();
+}
+
 /**
  * @brief Inicializa Leds
  */
@@ -134,8 +153,9 @@ void bsp_led_init() {
 	// Arranco el clock del periferico
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
 
-	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_15 | GPIO_Pin_14;
-	GPIO_InitStruct.GPIO_Pin |= GPIO_Pin_13 | GPIO_Pin_12;
+	GPIO_InitStruct.GPIO_Pin = LED_V | LED_R | LED_N | LED_A | GPIO_Pin_0
+			| GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_6 | GPIO_Pin_7
+			| GPIO_Pin_10 | GPIO_Pin_11;
 
 	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT;
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
@@ -185,7 +205,7 @@ void bsp_sw_init() {
 /**
  * @brief Inicializa TIM2
  */
-void bsp_timer_config(void) {
+void bsp_timer_init(void) {
 	TIM_TimeBaseInitTypeDef TIM_TimeBaseStruct;
 	NVIC_InitTypeDef NVIC_InitStructure;
 	/* Habilito la interrupcion global del  TIM2 */
@@ -210,7 +230,7 @@ void bsp_timer_config(void) {
 
 }
 
-void bsp_pwm_config(void) {
+void bsp_pwm_init(void) {
 	TIM_TimeBaseInitTypeDef TIM_config;
 	GPIO_InitTypeDef GPIO_config;
 	TIM_OCInitTypeDef TIM_OC_config;
@@ -273,5 +293,31 @@ void bsp_pwm_config(void) {
 	TIM_ARRPreloadConfig(TIM4, ENABLE);
 
 	TIM_Cmd(TIM4, ENABLE);
+}
 
+void bsp_adc_init(void) {
+	GPIO_InitTypeDef GPIO_InitStruct;
+	ADC_CommonInitTypeDef ADC_CommonInitStruct;
+	ADC_InitTypeDef ADC1_InitStruct;
+
+	// Habilito los clock a los periféricos
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
+
+	// Configuro el pin en modo analógico
+	GPIO_StructInit(&GPIO_InitStruct); // Reseteo la estructura
+	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_2;
+	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AIN; // Modo Analógico
+	GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+	// Configuro el prescaler del ADC
+	ADC_CommonStructInit(&ADC_CommonInitStruct);
+	ADC_CommonInitStruct.ADC_Prescaler = ADC_Prescaler_Div4;
+	ADC_CommonInit(&ADC_CommonInitStruct);
+
+	/* Configuro el ADC  */
+	ADC_StructInit(&ADC1_InitStruct);
+	ADC1_InitStruct.ADC_Resolution = ADC_Resolution_12b;
+	ADC_Init(ADC1, &ADC1_InitStruct);
+	ADC_Cmd(ADC1, ENABLE);
 }
